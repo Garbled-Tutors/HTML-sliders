@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+	<head profile="http://gmpg.org/xfn/11">
+		<link rel="stylesheet" href="css/anything_slider.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="js/jquery-1.js"></script> 
+		<script type="text/javascript" src="js/jquery.js" charset="utf-8"></script> 
+    <script type="text/javascript"> 
+			function formatText(index, panel) {
+				return index + "";
+			}
+    
+			$(function () {
+			
+					$('.anythingSlider').anythingSlider({
+							easing: "swing",        // Anything other than "linear" or "swing" requires the easing plugin
+							autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+							delay: 600,                    // How long between slide transitions in AutoPlay mode
+							startStopped: false,            // If autoPlay is on, this can force it to start stopped
+							animationTime: 1000,             // How long the slide transition takes
+							hashTags: true,                 // Should links change the hashtag in the URL?
+							buildNavigation: false,          // If true, builds and list of anchor links to link to each slide
+					pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+					startText: "Play",             // Start text
+					stopText: "stop",               // Stop text
+					navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+					});
+					
+					$("#slide-jump").click(function(){
+							$('.anythingSlider').anythingSlider(6);
+					});
+					
+			});
+    </script> 
+	</head>
+	<body>
+		<div class="anythingSlider">
+			<div class="wrapper" style="overflow: hidden;">
+				<ul>
+					<li><img src="images/slider.jpg"></li>
+					<li><img src="images/slider2.jpg"></li>
+					<li><img src="images/slider3.jpg"></li>
+					<li><img src="images/slider4.jpg"></li>
+				</ul>        
+			</div>
+		</div> 
+		<!-- END AnythingSlider -->
+	</body>
+</html>
